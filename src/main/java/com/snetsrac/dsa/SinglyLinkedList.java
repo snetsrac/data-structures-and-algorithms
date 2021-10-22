@@ -29,15 +29,15 @@ public class SinglyLinkedList<T> {
     public void addToFront(T data) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         if (data == null) {
-          throw new IllegalArgumentException("Cannot add null to SinglyLinkedList.");
+            throw new IllegalArgumentException("Cannot add null to SinglyLinkedList.");
         }
 
         if (head == null) {
-          head = new SinglyLinkedListNode<T>(data);
-          tail = head;
+            head = new SinglyLinkedListNode<T>(data);
+            tail = head;
         } else {
-          SinglyLinkedListNode<T> newNode = new SinglyLinkedListNode<>(data, head);
-          head = newNode;
+            SinglyLinkedListNode<T> newNode = new SinglyLinkedListNode<>(data, head);
+            head = newNode;
         }
 
         size++;
@@ -54,15 +54,15 @@ public class SinglyLinkedList<T> {
     public void addToBack(T data) {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         if (data == null) {
-          throw new IllegalArgumentException("Cannot add null to SinglyLinkedList.");
+            throw new IllegalArgumentException("Cannot add null to SinglyLinkedList.");
         }
 
         if (head == null) {
-          head = new SinglyLinkedListNode<T>(data);
-          tail = head;
+            head = new SinglyLinkedListNode<T>(data);
+            tail = head;
         } else {
-          tail.setNext(new SinglyLinkedListNode<>(data));
-          tail = tail.getNext();
+            tail.setNext(new SinglyLinkedListNode<>(data));
+            tail = tail.getNext();
         }
 
         size++;
@@ -79,16 +79,16 @@ public class SinglyLinkedList<T> {
     public T removeFromFront() {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         if (head == null) {
-          throw new NoSuchElementException("Cannot remove from an empty SinglyLinkedList.");
+            throw new NoSuchElementException("Cannot remove from an empty SinglyLinkedList.");
         }
 
         T data = head.getData();
 
         if (head == tail) {
-          head = null;
-          tail = null;
+            head = null;
+            tail = null;
         } else {
-          head = head.getNext();
+            head = head.getNext();
         }
 
         size--;
@@ -106,23 +106,23 @@ public class SinglyLinkedList<T> {
     public T removeFromBack() {
         // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
         if (head == null) {
-          throw new NoSuchElementException("Cannot remove from an empty SinglyLinkedList.");
+            throw new NoSuchElementException("Cannot remove from an empty SinglyLinkedList.");
         }
 
         T data = tail.getData();
 
         if (head == tail) {
-          head = null;
-          tail = null;
+            head = null;
+            tail = null;
         } else {
-          SinglyLinkedListNode<T> cur = head;
+            SinglyLinkedListNode<T> cur = head;
 
-          while (cur.getNext() != null && cur.getNext().getNext() != null) {
-            cur = cur.getNext();
-          }
+            while (cur.getNext() != null && cur.getNext().getNext() != null) {
+                cur = cur.getNext();
+            }
 
-          tail = cur;
-          tail.setNext(null);
+            tail = cur;
+            tail.setNext(null);
         }
 
         size--;
@@ -132,8 +132,8 @@ public class SinglyLinkedList<T> {
     /**
      * Returns the head node of the list.
      *
-     * For grading purposes only. You shouldn't need to use this method since
-     * you have direct access to the variable.
+     * For grading purposes only. You shouldn't need to use this method since you
+     * have direct access to the variable.
      *
      * @return the node at the head of the list
      */
@@ -145,8 +145,8 @@ public class SinglyLinkedList<T> {
     /**
      * Returns the tail node of the list.
      *
-     * For grading purposes only. You shouldn't need to use this method since
-     * you have direct access to the variable.
+     * For grading purposes only. You shouldn't need to use this method since you
+     * have direct access to the variable.
      *
      * @return the node at the tail of the list
      */
@@ -158,8 +158,8 @@ public class SinglyLinkedList<T> {
     /**
      * Returns the size of the list.
      *
-     * For grading purposes only. You shouldn't need to use this method since
-     * you have direct access to the variable.
+     * For grading purposes only. You shouldn't need to use this method since you
+     * have direct access to the variable.
      *
      * @return the size of the list
      */
@@ -169,16 +169,16 @@ public class SinglyLinkedList<T> {
     }
 
     public String toString() {
-      String string = "";
-      SinglyLinkedListNode<T> cur = head;
+        String string = "";
+        SinglyLinkedListNode<T> cur = head;
 
-      while (cur != null) {
-        string += cur.getData();
-        if (cur.getNext() != null)
-          string += " ";
-        cur = cur.getNext();
-      }
+        while (cur != null) {
+            string += cur.getData();
+            if (cur.getNext() != null)
+                string += " ";
+            cur = cur.getNext();
+        }
 
-      return string;
+        return string;
     }
 }
