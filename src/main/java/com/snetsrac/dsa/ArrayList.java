@@ -26,6 +26,7 @@ public class ArrayList<T> {
      * Recall that Java does not allow for regular generic array creation,
      * so instead we cast an Object[] to a T[] to get the generic typing.
      */
+    @SuppressWarnings("unchecked")
     public ArrayList() {
         //DO NOT MODIFY THIS METHOD!
         backingArray = (T[]) new Object[INITIAL_CAPACITY];
@@ -167,6 +168,7 @@ public class ArrayList<T> {
      * 
      * @return the array
      */
+    @SuppressWarnings("unchecked")
     public T[] getArray() {
         final T[] newArray = (T[]) new Object[size];
 
@@ -184,6 +186,7 @@ public class ArrayList<T> {
     /**
      * Doubles the capacity of the backing array.
      */
+    @SuppressWarnings("unchecked")
     private void resize() {
         final T[] newArray = (T[]) new Object[backingArray.length * 2];
 

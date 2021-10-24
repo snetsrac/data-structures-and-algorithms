@@ -27,9 +27,10 @@ public class ArrayQueue<T> {
      * Recall that Java does not allow for regular generic array creation,
      * so instead we cast an Object[] to a T[] to get the generic typing.
      */
+    @SuppressWarnings("unchecked")
     public ArrayQueue() {
         // DO NOT MODIFY THIS METHOD!
-        backingArray = (T[]) new Object[INITIAL_CAPACITY];
+        this.backingArray = (T[]) new Object[INITIAL_CAPACITY];
     }
 
     /**
@@ -131,6 +132,7 @@ public class ArrayQueue<T> {
         return string;
     }
 
+    @SuppressWarnings("unchecked")
     private void resize() {
         T[] newArray = (T[]) new Object[backingArray.length * 2];
 
